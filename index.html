@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Go Outside</title>
+    <link rel="icon" href="/images/umbrella (2).png">
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-F3w7mX95PdgyTmZZMECAngseQB83DfGTowi0iMjiWaeVhAn4FJkqJByhZMI3AhiU" crossorigin="anonymous">
+
+     <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;900&family=Ubuntu&display=swap" rel="stylesheet">
+
+    <!-- Feather Icons Script -->
+    <script src="https://cdn.jsdelivr.net/npm/feather-icons/dist/feather.min.js"></script>   
+    <!-- Link to CSS file -->
+    <link rel="stylesheet" href="assets/styles.css">
+
+    <!-- Icons from Fontawesome -->
+    <script src="https://kit.fontawesome.com/27f57c5d16.js" crossorigin="anonymous"></script>
+
+    <!-- Bootstrap Scripts -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"
+        integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.0/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-Piv4xVNRyMGpqkS2by6br4gNJ7DXjqk09RmUpJ8jgGtD7zP9yug3goQfGII0yAns"
+        crossorigin="anonymous"></script>
+</head>
+<body>
+    <section id="NavBar">
+        <!-- Nav Bar -->
+    
+      <div class="container-fluid">
+        <nav class="navbar navbar-light" style="background-color:#5E96CF;">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="">Go Outside</a>             
+                <form class="d-flex" method="POST" action="/">
+                <input id="cityy" class="form-control me-2" name="city" type="text" placeholder="Search for city" aria-label="Search"/>
+                <input name="country" class="form-control me-2" type="text" placeholder="Search for country" aria-label="Search"/>
+                <!-- <input class="form-control me-2" type="search" placeholder="Search for city" aria-label="Search"> -->
+                <button class="btn btn-outline-light" type="submit">Search</button>
+              </form>
+            </div>
+          </nav>
+      </div>
+    </section>
+
+    <section id="MainPage">
+        <div class="container">
+            <div class="day-weather">
+              <div class="weather-gradient"></div>
+              <div class="date-container">
+                <h2 class="date-dayname">{{.Weekday}}</h2><span class="date-day">{{.Day}} {{.Month}} {{.Year}}</span><i class="location-icon" data-feather="map-pin"></i><span class="location">{{.Location}}</span>
+              </div>
+              <div class="weather-container"><i class="weather-icon" data-feather="sun"></i>
+                <h1 class="weather-temp">{{.Temperature}}</h1>
+                <h3 class="weather-desc">{{.WeatherDesc}}</h3>
+              </div>
+            </div>
+            <div class="info-side">
+              <div class="today-info-container">
+                <div class="today-info">
+                  <div class="precipitation"> <span class="title">PRECIPITATION</span><span class="value">{{.Precipitation}} cm</span>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="humidity"> <span class="title">HUMIDITY</span><span class="value">{{.Humidity}} %</span>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="humidity"> <span class="title">VISIBILITY</span><span class="value">{{.Visibility}} km</span>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="wind"> <span class="title">WIND</span><span class="value">{{.WindSpeed}} m/s</span>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="humidity"> <span class="title">SUNRISE</span><span class="value">{{.SunriseHour}} : {{.SunriseMinute}}</span>
+                    <div class="clear"></div>
+                  </div>
+                  <div class="humidity"> <span class="title">SUNSET</span><span class="value">{{.SunsetHour}} : {{.SunsetMinute}}</span>
+                    <div class="clear"></div>
+                  </div>
+                </div>
+              </div>
+              <div class="week-container">
+                <ul class="week-list">
+                  <li class="active"><i class="day-icon" data-feather="sun"></i><span class="day-name">Mon</span><span class="day-temp">{{.Temperature}}</span></li>
+                  <li><i class="day-icon" data-feather="cloud"><script>feather.replace()</script></i><span class="day-name">Tue</span><span class="day-temp">{{.Tuesday}}</span></li>
+                  <li><i class="day-icon" data-feather="cloud"><script>feather.replace()</script></i><span class="day-name">Wed</span><span class="day-temp">{{.Wednesday}}</span></li>
+                  <li><i class="day-icon" data-feather="cloud"><script>feather.replace()</script></i><span class="day-name">Thu</span><span class="day-temp">{{.Thursday}}</span></li>
+                  <li><i class="day-icon" data-feather="cloud-snow"><script>feather.replace()</script></i><span class="day-name">Fri</span><span class="day-temp">{{.Friday}}</span></li>
+                  <li><i class="day-icon" data-feather="cloud-rain"><script>feather.replace()</script></i><span class="day-name">Sat</span><span class="day-temp">{{.Saturday}}</span></li>
+                  <li><i class="day-icon" data-feather="cloud-rain"><script>feather.replace()</script></i><span class="day-name">Sun</span><span class="day-temp">{{.Sunday}}</span></li>
+                  <div class="clear"></div>
+                </ul>   
+              </div>
+            </div>
+          </div>
+    </section>
+</body>
+</html>
