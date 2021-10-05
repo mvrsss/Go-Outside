@@ -7,7 +7,7 @@ import (
 	"math/rand"
 	"net/http"
 	"time"
-	"weather_app/api"
+	"github.com/mvrsss/Go-Outside/api"
 )
 
 var OWM_API_KEY string = "a4639c7839003c35f051fa8a51d68fdf"
