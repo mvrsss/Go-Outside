@@ -94,10 +94,6 @@ func main() {
 	fs := http.FileServer(http.Dir("assets"))
 	http.Handle("/assets/", http.StripPrefix("/assets/", fs))
 	http.HandleFunc("/", PostLocation)
-	i := City + ", " + Country
-	LOCATION = i
-
-	print(LOCATION)
 	http.ListenAndServe(":8080", nil)
 }
 
