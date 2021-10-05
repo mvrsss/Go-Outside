@@ -10,8 +10,8 @@ import (
 	"github.com/mvrsss/Go-Outside/api"
 )
 
-var OWM_API_KEY string = "a4639c7839003c35f051fa8a51d68fdf"
-var POSITIONSTACK_KEY string = "92028bf94b41a4d19c883e4120e814db"
+var OWM_API_KEY string = "apikey"
+var POSITIONSTACK_KEY string = "apikey"
 var LOCATION string
 var WeatherDetails api.OpenWeatherModel
 
